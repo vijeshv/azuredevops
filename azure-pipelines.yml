@@ -54,6 +54,7 @@ jobs:
       script: |
         neoload --help
         echo $(Build.SourcesDirectory)
+        ls
         neoload login --url ${{parameters.neoloadApiUrl}} $(nlw_token) \
                 test-settings --zone $(zone_code) --lgs 2 --scenario AsCodeStandalone createorpatch "My Azure Test With CLI" \
                 project --path $(Build.SourcesDirectory)/ upload "My Azure Test With CLI"
