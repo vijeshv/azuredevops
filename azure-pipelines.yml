@@ -74,6 +74,13 @@ jobs:
                        "My Azure Test With CLI"
 
   - task: Bash@3
+    displayName: checkResult
+    inputs:
+      targetType: 'inline'
+      script: |
+        neoload test-results ls cur | jq '.qualityStatus'
+        
+  - task: Bash@3
     displayName: Get the junit SLA report
     continueOnError: true
     inputs:
