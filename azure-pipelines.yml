@@ -28,6 +28,7 @@ resources:
 
 jobs:
 - job: RunLoadTest
+  timeoutInMinutes: 20
   displayName: Run NeoLoad Test
   services:
     neoload_ctrl: neoload_ctrl
