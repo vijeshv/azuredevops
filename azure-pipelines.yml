@@ -95,6 +95,13 @@ jobs:
       targetType: 'inline'
       script: |
        neoload report --template builtin:transactions-csv "TestLaunchedFromAzureCI_build_$(Build.BuildNumber)" > $(Common.TestResultsDirectory)/temp.csv
+  - task: Bash@3
+    displayName: print  transactions to standard output
+    continueOnError: true
+    inputs:
+      targetType: 'inline'
+      script: |
+       neoload report --out-file
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
