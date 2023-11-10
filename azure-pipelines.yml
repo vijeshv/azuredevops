@@ -101,7 +101,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-       neoload report --out-file "none"
+       neoload report --template builtin:transactions-csv --out-file "none"
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
