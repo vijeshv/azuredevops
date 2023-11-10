@@ -98,7 +98,7 @@ jobs:
        while read line
         do
           echo "Record is : $line"
-        done < <(tail -n +2 $(Common.TestResultsDirectory)/temp.csv)
+        done < $(Common.TestResultsDirectory)/temp.csv
   - task: Bash@3
     displayName: print  transactions to standard output
     continueOnError: true
