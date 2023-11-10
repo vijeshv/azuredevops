@@ -87,6 +87,14 @@ jobs:
       targetType: 'inline'
       script: |
        neoload test-results --junit-file $(Common.TestResultsDirectory)/neoload-slas.xml junitsla
+       
+  - task: Bash@3
+    displayName: Export transactions to CSV
+    continueOnError: true
+    inputs:
+      targetType: 'inline'
+      script: |
+       neoload report --template builtin:transactions-csv "TestLaunchedFromAzureCI_build_$(Build.BuildNumber)" > $(Common.TestResultsDirectory)/temp.csv
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
