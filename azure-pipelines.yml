@@ -54,6 +54,7 @@ jobs:
       targetType: 'inline'
       script: |
         neoload --help
+        sleep 60
         echo $(Build.SourcesDirectory)
         ls
         neoload login --url ${{parameters.neoloadApiUrl}} $(nlw_token) \
