@@ -67,7 +67,7 @@ jobs:
       targetType: 'inline'
       script: |
         neoload run \
-                       --web-vu 50 \
+                       --sap-vu 50 \
                        --name "TestLaunchedFromAzureCI_build_$(Build.BuildNumber)" \
                        --description "Azure example with meta; $(Build.BuildUri)" \
                        --external-url "$(Build.BuildUri)" \
